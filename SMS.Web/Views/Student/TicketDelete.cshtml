@@ -1,0 +1,32 @@
+  @model Ticket
+    
+<h3 class="mt-4 mb-4">Delete Ticket</h3>
+
+<h4 class="mb-4">Are you sure you want to delete this Ticket?</h4>
+
+<div>
+    <!-- display the student using a <dl> as per Details.cshtml -->
+    <div class="col card rounded shadow p-3">
+        <dl class="row">       
+            <dt class="col-5">Student</dt>
+            <dd class="col-7">@Model.Student.Name</dd>
+
+            <dt class="col-5">Issue</dt>
+            <dd class="col-7">@Model.Issue</dd>
+            
+            <dt class="col-5">Created</dt>
+            <dd class="col-7">@Model.CreatedOn.ToShortDateString()</dd>
+            
+            <dt class="col-5">Active</dt>
+            <dd class="col-7">@Model.Active</dd>           
+        </dl>
+    </div>
+
+    <div class="mt-4">
+        <!-- TBC -->
+        <!-- add a form with hidden input storing the ticket id as Id and a   -->
+        <!-- second hidden input field containing the student id as StudentId -->
+        <!-- the form asp-action should call TicketDeleteConfirm              -->
+    </div>
+    
+</div>

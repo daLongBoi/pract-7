@@ -1,0 +1,45 @@
+ @model Student
+    
+<h3 class="mt-4 mb-4">Student Details</h3>
+<div class="row">
+    <!-- Details -->
+    <div class="col-8 card rounded shadow pt-3">
+        <dl class="row">       
+            <dt class="col-5">Name</dt>
+            <dd class="col-7">@Model.Name</dd>
+
+            <dt class="col-5">Course</dt>
+            <dd class="col-7">@Model.Course</dd>
+            
+            <dt class="col-5">Age</dt>
+            <dd class="col-7">@Model.Age</dd>
+            
+            <dt class="col-5">Email</dt>
+            <dd class="col-7">@Model.Email</dd>
+
+                <dt class="col-5">Classification</dt>
+            <dd class="col-7">@Model.Classification</dd>
+        </dl>
+
+        <div class="mt-4">
+            <!-- add navigation link to redirect to Index action -->
+            <a asp-controller="Student" asp-action="Index" class="btn btn-sm btn-primary">Students</a>
+
+            <!-- TBC - add navigation link to CreateTicket action, passing correct route parameter --> 
+            
+
+            <!-- add navigation link to Details action, passing the correct route id parameter --> 
+            <a asp-controller="Student" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Edit</a>
+            
+            <!-- add navigation link to Delete action, passing the correct route id parameter --> 
+            <a asp-controller="Student" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Delete</a>
+        </div>
+    </div>
+    <!-- Photo -->
+    <div class="col-4">
+        <img src="@Model.PhotoUrl" class="img-fluid">
+    </div>
+</div>
+
+<!-- TBC Create and Add Tickets Partial View Table -->   
+
