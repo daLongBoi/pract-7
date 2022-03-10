@@ -3,7 +3,9 @@
 <h3 class="mt-4">Create Ticket</h3>
 
 <!-- TBC - add form to create a ticket -->
-
+<div class= "card rounded shadow p-3">
+  <form asp-action="ticketsCreate">
+    <div asp-validation-for="Issue"
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

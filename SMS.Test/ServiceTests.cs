@@ -214,11 +214,14 @@ namespace SMS.Test
         public void Ticket_CreateTicket_ForExistingStudent_ShouldBeCreated()
         {
             // TBC - complete this method
+          
             // arrange
-           
+            var added = svc.AddStudent("Clare",       
+            "Computing", "clare@gmail.com", 21, 0, "");
             // act
-           
+           var t = svc.CreateTicket(s.Id,"template issue")
             // assert
+          Assert.Equal(t);
           
         }
 
