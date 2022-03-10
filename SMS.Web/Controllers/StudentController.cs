@@ -165,12 +165,13 @@ namespace SMS.Web.Controllers
 
         // POST /student/ticketdeleteconfirm/{id}
         [HttpPost]
-        public IActionResult TicketDeleteConfirm(int id, int studentId)
+        public  IActionResult TicketDeleteConfirm(int id, int studentId)
         {
+        
             // TBC delete student via service
-            
+            svc.DeleteTicket(id);
             // redirect to view the List of Students
-            return NotFound();
+            return RedirectToAction(nameof(Details));
         }
 
 

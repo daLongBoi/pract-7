@@ -24,9 +24,21 @@
 
     <div class="mt-4">
         <!-- TBC -->
-        <!-- add a form with hidden input storing the ticket id as Id and a   -->
+       
+        <div class="card rounded shadow p-3">
+    <form asp-action="TicketDeleteConfirm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+         <!-- add a form with hidden input storing the ticket id as Id and a   -->
+        <input type="hidden" asp-for="Id">
+        
         <!-- second hidden input field containing the student id as StudentId -->
+         <input type="hidden" asp-for="StudentId">
+
+
         <!-- the form asp-action should call TicketDeleteConfirm              -->
-    </div>
-    
+       <div class="mt-3">
+            <a class="btn btn-sm btn-danger" asp-action="TicketDeleteConfirm" asp-rout-id="@Model.StudentId">Delete</a>
+            <a class="btn btn-secondary" asp-action="Detials" asp-rout-id="@Model.StudentId">Cancel</a>
+        </div>
+    </form>
 </div>

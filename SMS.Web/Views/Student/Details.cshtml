@@ -26,7 +26,7 @@
             <a asp-controller="Student" asp-action="Index" class="btn btn-sm btn-primary">Students</a>
 
             <!-- TBC - add navigation link to CreateTicket action, passing correct route parameter --> 
-            
+             <a asp-controller="Student" asp-action="TIcketCreate" asp-route-id= "@Model.Id" class="btn btn-sm btn-secondary">CreateTicket</a>
 
             <!-- add navigation link to Details action, passing the correct route id parameter --> 
             <a asp-controller="Student" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Edit</a>
@@ -42,4 +42,16 @@
 </div>
 
 <!-- TBC Create and Add Tickets Partial View Table -->   
-<div class= 
+@if (Model.Tickets.Count > 0)
+{
+<partial name = "_tickets"/>
+}
+else 
+{
+ <div class="row">
+    <div class="col-8 card rounded shadow pt-3"> 
+        <b>No tickets currently</b>
+    </div>
+ </div>
+
+}

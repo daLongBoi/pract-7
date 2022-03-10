@@ -27,7 +27,9 @@ namespace SMS.Data.Services
         // retrieve list of Students
         public List<Student> GetStudents()
         {
-            return db.Students.ToList();
+            return db.Students
+            .Include(s =>s.Tickets)
+            .ToList();
         }
 
 
@@ -111,16 +113,17 @@ namespace SMS.Data.Services
         // ===================== Ticket Management ==========================
         public Ticket CreateTicket(int studentId, string issue)
         {
-          var s = GetStudent(studentId)
+          var s = GetStudent(studentId);
 
-          if(s = null){
+          if(s == null){
             // TBC - complete this method
             return null;
-        }
+            }
         //create ticket and add to db
-        var t = new  Ticket (StudentId = studentId, Issue = issue );
-        db.tickets.add(t);
+        var t = new  Ticket {StudentId = studentId, Issue = issue };
+        db.Tickets.Add(t);
         db.SaveChanges();
+        return t;
         }
 
         public Ticket GetTicket(int id)
